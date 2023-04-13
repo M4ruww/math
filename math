@@ -1,0 +1,36 @@
+# Function to count arithmetic tasks
+def count_math_tasks(expression):
+    # Initialize counters
+    addition_count = 0
+    subtraction_count = 0
+    multiplication_count = 0
+    division_count = 0
+
+    # Loop through each character in the expression
+    for char in expression:
+        if char == '+':
+            addition_count += 1
+        elif char == '-':
+            subtraction_count += 1
+        elif char == '*':
+            multiplication_count += 1
+        elif char == '/':
+            division_count += 1
+
+    # Return the counts as a dictionary
+    math_counts = {
+        'Addition': addition_count,
+        'Subtraction': subtraction_count,
+        'Multiplication': multiplication_count,
+        'Division': division_count
+    }
+    return math_counts
+
+# Example usage
+expression = '5 + 3 - 2 * 4 / 2'
+math_counts = count_math_tasks(expression)
+
+# Print the counts
+print('Math Task Counts:')
+for task, count in math_counts.items():
+    print(f'{task}: {count}')
